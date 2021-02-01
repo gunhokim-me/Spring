@@ -1,6 +1,8 @@
 package kr.or.ddit.ioc;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import javax.annotation.Resource;
 
@@ -13,8 +15,8 @@ import kr.or.ddit.ioc.config.IocJavaConfig;
 import kr.or.ddit.user.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {IocJavaConfig.class})
-public class IocJavaConfigTest {
+@ContextConfiguration(classes = IocJavaConfig.class)
+public class IocJavaConfigTest{
 
 	
 	@Resource(name="userService")

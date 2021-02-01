@@ -15,20 +15,20 @@ import kr.or.ddit.user.repository.UserDao;
 import kr.or.ddit.user.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ComponentScanJavaConfig.class})
-public class ComponentScanJavaTest {
+@ContextConfiguration(classes = ComponentScanJavaConfig.class)
+public class ComponentScanJavaTest{
 
 	@Resource(name="userDao")
 	private UserDao userDao;
 	
-	@Resource(name="userServiceImpl")
+	@Resource(name="userService")
 	private UserService userService;
 	
 	//@Repository 어노페이션을 적용한 UserDaoImpl 스프링 빈이 정상적으로 컨테이너에 등록 되었는지 확인
 	@Test
 	public void UserDaoImplSpringBeanTest() {
 		assertNotNull(userDao);
-		UserVo userVo = userDao.getUser("brown");
+		UserVo userVo = userDao.selectUser("brown");
 		assertEquals("브라운", userVo.getUsernm());
 	}
 	
@@ -36,7 +36,7 @@ public class ComponentScanJavaTest {
 	@Test
 	public void UserServiceImplSpringBeanTest() {
 		assertNotNull(userDao);
-		UserVo userVo = userService.getUser("brown");
+		UserVo userVo = userService.selectUser("brown");
 		assertEquals("브라운", userVo.getUsernm());
 	}
 

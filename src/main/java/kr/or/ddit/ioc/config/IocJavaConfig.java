@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 
@@ -15,6 +16,8 @@ import kr.or.ddit.ioc.DbConfig;
 import kr.or.ddit.user.repository.UserDao;
 import kr.or.ddit.user.repository.UserDaoImpl;
 import kr.or.ddit.user.service.UserServiceImpl;
+
+@ImportResource("classpath:/kr/or/ddit/config/spring/datasource-context.xml")
 
 //스프링 프레임워크에게 해당 자바파일이 스프링 설정파일임을 알려준다
 @Configuration 

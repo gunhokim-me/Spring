@@ -6,18 +6,23 @@ import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.user.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:/kr/or/ddit/ioc/ioc.xml")
+@ContextConfiguration(locations = {"classpath:/kr/or/ddit/config/spring/applicarion-context.xml",
+        "classpath:/kr/or/ddit/config/spring/root-context.xml",
+        "classpath:/kr/or/ddit/config/spring/datasource-context.xml",
+        "classpath:/kr/or/ddit/ioc/ioc.xml"})
 public class IocTest {
-
-	@Resource(name="userService")
-	private UserService userService;
 	
+	//@Resource(name="userService")
+	@Autowired
+	private UserService userService;
+
 	@Resource(name="userService")
 	private UserService userService2;
 	
