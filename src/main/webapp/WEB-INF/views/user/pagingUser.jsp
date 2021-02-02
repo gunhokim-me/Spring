@@ -37,7 +37,7 @@
 </head>
 
 <body>
-<form id="frm" action="${cp}/user">
+<form id="frm" action="/user/userDetail">
 	<input type="hidden" id="userid" name="userid" value=""/>
 </form>
 
@@ -71,17 +71,17 @@
 								</c:forEach>
 							</table>
 						</div>
-						<a class="btn btn-default pull-right" href="/user/registUser.jsp">사용자 등록</a>
+						<a class="btn btn-default pull-right" href="/user/userRegist">사용자 등록</a>
 						<div class="text-center">
 							<ul class="pagination">
-							<li><a href="${cp}/pagingUser?page=1&pageSize=${pageVo.getPageSize()}"><span>«</span></a></li>
+							<li><a href="${cp}/user/pagingUser?page=1&pageSize=${pageVo.getPageSize()}"><span>«</span></a></li>
 									<c:set var="cnt" value="0"></c:set>
 									<c:choose>
 										<c:when test="${pageVo.getPage() != 1 && (pageVo.getPage()+3) <= 5 }">
-											<li><a href="${cp}/pagingUser?page=1&pageSize=${pageVo.getPageSize()}"><span>1</span></a></li>
+											<li><a href="${cp}/user/pagingUser?page=1&pageSize=${pageVo.getPageSize()}"><span>1</span></a></li>
 										</c:when>
 										<c:when test="${pageVo.getPage() != 1 && (pageVo.getPage()+3) > 5 }">
-											<li><a href="${cp}/pagingUser?page=1&pageSize=${pageVo.getPageSize()}"><span>1</span></a></li>
+											<li><a href="${cp}/user/pagingUser?page=1&pageSize=${pageVo.getPageSize()}"><span>1</span></a></li>
 											<li class="prev disabled"><span>---</span></li>
 										</c:when>
 									</c:choose>
@@ -89,8 +89,8 @@
 										<c:choose>
 											<c:when test="${pageVo.getPage() == i && i > 2}">
 												<c:set var="cnt" value="2"></c:set>
-												<li><a href="${cp}/pagingUser?page=${i-2 }&pageSize=${pageVo.getPageSize()}"><span>${i-2 }</span></a></li>
-												<li><a href="${cp}/pagingUser?page=${i-1 }&pageSize=${pageVo.getPageSize()}"><span>${i-1 }</span></a></li>
+												<li><a href="${cp}/user/pagingUser?page=${i-2 }&pageSize=${pageVo.getPageSize()}"><span>${i-2 }</span></a></li>
+												<li><a href="${cp}/user/pagingUser?page=${i-1 }&pageSize=${pageVo.getPageSize()}"><span>${i-1 }</span></a></li>
 												<li class="active"><span>${i }</span></li>	
 											</c:when>
 											<c:when test="${pageVo.getPage() == i && i <= 2}">
@@ -99,19 +99,19 @@
 											<c:otherwise>
 												<c:if test="${cnt <=5 }">
 													<c:set var="cnt" value="${cnt+1}"></c:set>
-													<li><a href="${cp}/pagingUser?page=${i }&pageSize=${pageVo.getPageSize()}"><span>${i }</span></a></li>
+													<li><a href="${cp}/user/pagingUser?page=${i }&pageSize=${pageVo.getPageSize()}"><span>${i }</span></a></li>
 												</c:if>
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
 									<c:choose>
 										<c:when test="${pageVo.getPage()+2 ==  pagination}">
-											<li class="next"><a href="${cp}/pagingUser?page=${pagination}&pageSize=${pageVo.getPageSize()}">»</a></li>
+											<li class="next"><a href="${cp}/user/pagingUser?page=${pagination}&pageSize=${pageVo.getPageSize()}">»</a></li>
 										</c:when>
 										<c:otherwise>
 											<li class="prev disabled"><span>---</span></li>
-											<li><a href="${cp}/pagingUser?page=${pagination}&pageSize=${pageVo.getPageSize()}"><span>${pagination}</span></a></li>
-											<li class="next"><a href="${cp}/pagingUser?page=${pagination}&pageSize=${pageVo.getPageSize()}">»</a></li>
+											<li><a href="${cp}/user/pagingUser?page=${pagination}&pageSize=${pageVo.getPageSize()}"><span>${pagination}</span></a></li>
+											<li class="next"><a href="${cp}/user/pagingUser?page=${pagination}&pageSize=${pageVo.getPageSize()}">»</a></li>
 										</c:otherwise>
 									</c:choose>
 							</ul>

@@ -97,11 +97,11 @@ public class UserServiceTest extends ModelTestConfig{
 		//List<UserVo> pagingUser = userService.selectPagingUser(vo);
 		Map<String, Object> map = userService.selectPagingUser(vo);
 		List<UserVo> list = (List<UserVo>)map.get("userList");
-		int userCnt = (int)map.get("userCnt");
+		//int userCnt = (int)map.get("userCnt");
 		
 		/***Then***/
 		assertEquals(5, list.size());
-		assertEquals(18, userCnt);
+		//assertEquals(18, userCnt);
 		
 	}
 	

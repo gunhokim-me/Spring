@@ -13,7 +13,7 @@
 	<select id="selectUser" parameterType="String" resultType="userVo">
 		SELECT * 
 		FROM users 
-		WHERE userid = #{value}
+		WHERE userid = #{userid}
 	</select>
 	
 	<!-- valueObject vs Map -->
@@ -39,7 +39,7 @@
 		UPDATE users SET 
 						usernm = #{usernm}, 
 						pass = #{pass}, 
-						reg_dt = #{reg_dt}, 
+						reg_dt = SYSDATE, 
 						alias = #{alias}, 
 						addr1 = #{addr1}, 
 						addr2 = #{addr2}, 
@@ -59,7 +59,7 @@
 	<!-- 회원 등록 -->
 	<insert id="registUser" parameterType="userVo">
 		INSERT INTO users (userid,usernm,pass,reg_dt,alias,addr1,addr2,zipcode, filename, realfilename) 
-			   VALUES (#{userid}, #{usernm},#{pass}, #{reg_dt},#{alias}, #{addr1}, #{addr2},#{zipcode}, #{filename}, #{realfilename})
+			   VALUES (#{userid}, #{usernm},#{pass}, SYSDATE,#{alias}, #{addr1}, #{addr2},#{zipcode}, #{filename}, #{realfilename})
 	</insert>
 	
 	<!-- 회원 삭제 -->

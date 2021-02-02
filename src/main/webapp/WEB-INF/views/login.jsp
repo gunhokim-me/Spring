@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +19,7 @@
 	
     <!-- Custom styles for this template -->
     <link href="${cp}/css/signin.css" rel="stylesheet">
-	
+    
 	<script>
 		function getCookieValue(cookieStr, cookieName){
 			var arr = document.cookie.split("; ");
@@ -47,8 +48,11 @@
 	
 		//html 문서 로딩이 완료 되고 나서 실행 되는 코드
 		$(function(){
-			//rememberme, userid 쿠키를 확인해서 존재할 경우 값설정, 체크
+			<c:if test="${msg != null}">
+				alert("${msg}" + "ra");
+			</c:if>
 			
+			//rememberme, userid 쿠키를 확인해서 존재할 경우 값설정, 체크
 			$("#userid").val(Cookies.get("userid"))	
 			if(Cookies.get("rememberme") == "Y"){
 				$("#rememberme").attr("checked", true);
@@ -77,7 +81,6 @@
   </head>
 
   <body>
-
     <div class="container">
       <form id="frm" class="form-signin" action="${cp}/login/process" method="POST">
         <h2 class="form-signin-heading">Please sign in</h2>

@@ -33,4 +33,15 @@ public class HelloControllerTest extends WebTestConfig {
 		
 	}
 
+	@Test
+	public void pathVariableTest() throws Exception{
+		MvcResult mvcResult = mockMvc.perform(get("/hello/path/sally"))
+				   .andExpect(status().isOk())
+				   .andExpect(model().attributeExists("subpath"))
+				   .andDo(print())
+				   .andReturn();
+		
+		ModelAndView mav = mvcResult.getModelAndView();
+		assertEquals("sally", mav.getModel().get("subpath"));
+	}
 }
