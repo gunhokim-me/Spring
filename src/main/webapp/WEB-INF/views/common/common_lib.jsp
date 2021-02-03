@@ -5,6 +5,10 @@
 <!-- Bootstrap core CSS -->
 <link href="${cp}/css/bootstrap.min.css" rel="stylesheet">
 
+<link href="${cp}/css/dashboard.css" rel="stylesheet">
+
+<link href="${cp}/css/blog.css" rel="stylesheet">
+
 <!-- jquery CDN방식-->
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

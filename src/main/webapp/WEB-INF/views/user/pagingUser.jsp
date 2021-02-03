@@ -72,6 +72,7 @@
 							</table>
 						</div>
 						<a class="btn btn-default pull-right" href="/user/userRegist">사용자 등록</a>
+						<a class="btn btn-default pull-right" href="/user/excleDownload">엑셀 다운로드</a>
 						<div class="text-center">
 							<ul class="pagination">
 							<li><a href="${cp}/user/pagingUser?page=1&pageSize=${pageVo.getPageSize()}"><span>«</span></a></li>

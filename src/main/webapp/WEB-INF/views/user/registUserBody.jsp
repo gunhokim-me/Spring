@@ -4,21 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="../../favicon.ico">
 
-<title>Jsp</title>
-
-<%@ include file="/WEB-INF/views/common/common_lib.jsp"%>
-<link href="${cp}/css/dashboard.css" rel="stylesheet">
-<link href="${cp}/css/blog.css" rel="stylesheet">
 <%
 	UserVo vo2 = (UserVo) request.getAttribute("vo");
 %>
@@ -88,18 +74,7 @@ $(function(){
 	});
 </script>
 
-</head>
-
-<body>
-	<%@include file="/WEB-INF/views/common/header.jsp"%>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
-				<%@ include file="/WEB-INF/views/common/left.jsp"%>
-			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-			
-				<form class="form-horizontal" id ="test1"role="form" action="/user/userRegistsubmit" method="post" enctype="multipart/form-data">
+	<form class="form-horizontal" id ="test1"role="form" action="/user/userRegistsubmit" method="post" enctype="multipart/form-data">
 					spring message : <spring:message code="GREETING" arguments="brown"/>
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
@@ -172,8 +147,3 @@ $(function(){
 						</div>
 					</div>
 				</form>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
