@@ -73,6 +73,32 @@ public class UserController {
 		return "tiles.user.pagingUser";
 	}
 	
+	//사용자 리스트가 없는 상태의 화면만 응답으로 생성
+	@RequestMapping("pagingUserAjaxView")
+	public String pagingUserAjaxView() {
+		return "tiles.user.pagingUserAjax";
+	}
+	
+	@RequestMapping("pagingUserAjax")
+	public String pagingUserAjax(@RequestParam(defaultValue = "1") int page, 
+							     @RequestParam(defaultValue = "5") int pageSize, Model model) {
+		PageVo pageVo = new PageVo(page, pageSize); 
+		
+		model.addAllAttributes(userService.selectPagingUser(pageVo));
+		
+		return "jsonView";
+	}
+	
+	@RequestMapping("pagingUserAjaxHtml")
+	public String pagingUserAjaxHtml(@RequestParam(defaultValue = "1") int page, 
+			@RequestParam(defaultValue = "5") int pageSize, Model model) {
+		PageVo pageVo = new PageVo(page, pageSize); 
+		
+		model.addAllAttributes(userService.selectPagingUser(pageVo));
+		
+		return "user/pagingUserAjaxHtml";
+	}
+	
 	//@RequestMapping("pagingUser")
 	public String pagingUser(PageVo pageVo, Model model) {
 		model.addAllAttributes(userService.selectPagingUser(pageVo));

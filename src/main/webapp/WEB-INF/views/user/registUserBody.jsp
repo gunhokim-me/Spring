@@ -76,8 +76,9 @@ $(function(){
 
 	<form class="form-horizontal" id ="test1"role="form" action="/user/userRegistsubmit" method="post" enctype="multipart/form-data">
 					spring message : <spring:message code="GREETING" arguments="brown"/>
+					spring message 적용
 					<div class="form-group">
-						<label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
+						<label for="userNm" class="col-sm-2 control-label"><spring:message code="USERID"/></label>
 						<div class="col-sm-8">
 							<input type="text" class="form-control" id="userid" name="userid" placeholder="사용자 아이디">
 							
@@ -91,14 +92,14 @@ $(function(){
 					</div>
 					
 					<div class="form-group">
-						<label for="userNm" class="col-sm-2 control-label">사용자 이름</label>
+						<label for="userNm" class="col-sm-2 control-label"><spring:message code="USERNM"/></label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="usernm" name="usernm" placeholder="사용자 이름">
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="pass" class="col-sm-2 control-label">Password</label>
+						<label for="pass" class="col-sm-2 control-label"><spring:message code="PASS"/></label>
 						<div class="col-sm-10">
 							<input type="password" class="form-control" id="pass" name="pass" placeholder="비밀번호">
 						</div>
@@ -112,14 +113,14 @@ $(function(){
 					</div> -->
 
 					<div class="form-group">
-						<label for="userNm" class="col-sm-2 control-label">별명</label>
+						<label for="userNm" class="col-sm-2 control-label"><spring:message code="ALIAS"/></label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="alias" name="alias" placeholder="별명">
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="userNm" class="col-sm-2 control-label">도로주소</label>
+						<label for="userNm" class="col-sm-2 control-label"><spring:message code="ADDR1"/></label>
 						<div class="col-sm-8">
 							<input type="text" class="form-control" id="addr1" name="addr1" placeholder="도로주소" readonly="readonly">
 						</div>
@@ -129,14 +130,14 @@ $(function(){
 					</div>
 					
 					<div class="form-group">
-						<label for="userNm" class="col-sm-2 control-label">상세주소</label>
+						<label for="userNm" class="col-sm-2 control-label"><spring:message code="ADDR2"/></label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="addr2" name="addr2" placeholder="상세주소">
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="userNm" class="col-sm-2 control-label">우편번호 코드</label>
+						<label for="userNm" class="col-sm-2 control-label"><spring:message code="ZIPCODE"/></label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="우편번호 코드" readonly="readonly">
 						</div>
@@ -147,3 +148,16 @@ $(function(){
 						</div>
 					</div>
 				</form>
+				<select name="lang">
+					<option value="">언어설정</option>
+					<option value="ko">한국어</option>
+					<option value="en">English</option>
+				</select>
+<script>
+$(function(){
+	$("select[name=lang]").on("change",function(){
+		document.location = "/user/userRegistTiles?lang=" + $(this).val();
+	});
+	$("select[name=lang]").val("${param.lang}");
+});
+</script>

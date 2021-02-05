@@ -20,8 +20,6 @@
 	});
 </script>
 
-
-
 <form id="frm" action="/user/userDetailTiles">
 	<input type="hidden" id="userid" name="userid" value=""/>
 </form>
