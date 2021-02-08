@@ -107,7 +107,7 @@ public class UserServiceTest extends ModelTestConfig{
 	
 	//사용자 페이징 조회 테스트
 	@Test
-	public void modifyUserTest() {
+	public void insertUserTest() {
 		/***Given***/
 		//userid, usernm, pass, reg_dt, alias, addr1, addr2, zipcode
 		UserVo vo = new UserVo("ddit","대덕인재","dditpass",new Date(),"개발원 m","대전시 중구 중앙로 76","4층 대덕인재개발원","34940","brown.png","uudi-generated-filename.png");
@@ -144,5 +144,4 @@ public class UserServiceTest extends ModelTestConfig{
 		assertEquals(1, cnt);
 	}
 	
-
 }
