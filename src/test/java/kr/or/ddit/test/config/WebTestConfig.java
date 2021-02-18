@@ -17,7 +17,7 @@ import org.springframework.web.context.WebApplicationContext;
 @WebAppConfiguration
 @ContextConfiguration(locations = {"classpath:/kr/or/ddit/config/spring/applicarion-context.xml",
 		                           "classpath:/kr/or/ddit/config/spring/root-context.xml",
-		                           "classpath:/kr/or/ddit/config/spring/datasource-context.xml"})
+		                           "classpath:/kr/or/ddit/config/spring/datasource-context_dev.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class WebTestConfig {
 	

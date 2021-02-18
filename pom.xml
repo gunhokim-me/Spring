@@ -11,6 +11,7 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
 		<spring.version>4.3.30.RELEASE</spring.version>
+		<batch.version>3.0.10.RELEASE</batch.version>
 	</properties>
 
 	<build>
@@ -210,6 +211,28 @@
 		    <artifactId>aspectjrt</artifactId>
 		    <version>1.9.6</version>
 		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-core -->
+		<dependency>
+		    <groupId>org.springframework.batch</groupId>
+		    <artifactId>spring-batch-core</artifactId>
+		    <version>${batch.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-infrastructure -->
+		<dependency>
+		    <groupId>org.springframework.batch</groupId>
+		    <artifactId>spring-batch-infrastructure</artifactId>
+		    <version>${batch.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-test -->
+		<dependency>
+		    <groupId>org.springframework.batch</groupId>
+		    <artifactId>spring-batch-test</artifactId>
+		    <version>${batch.version}</version>
+		    <scope>test</scope>
+		</dependency>
 		
 	</dependencies>
 </project>
